@@ -1,6 +1,6 @@
 // Change these to change the physics of our world.
-const bounceSpeed = 12.2;
-const gravity = 0.17;
+const bounceSpeed = 1.0;
+const gravity = 0.001;
 const ballSize = 15;
 
 // The framework will draw the background for us.
@@ -14,8 +14,9 @@ const ballSize = 15;
 
 // Implement this in terms of drawShadow(), drawBall() and the
 // functions below. May also need to define a variable to keep
-// track of time.
-const drawFrame = () => {};
+// track of when each bounce starts as the time value that is
+// passed in is just the current time.
+const drawFrame = (time) => {};
 
 // Compute the height in pixels at time t after the ball hit the ground
 const height = (t) => 0;
