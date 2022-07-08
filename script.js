@@ -1,6 +1,6 @@
 // Change these to change the physics of our world.
 const bounceSpeed = 1.0;
-const gravity = 0.001;
+const gravity = 0.002;
 const ballSize = 15;
 
 // The framework will draw the background for us. It also provides two
@@ -19,13 +19,14 @@ const drawFrame = (time) => {
   drawBall(h, ballSize);
   if (h <= 0) {
     start = time;
+    //bounceSpeed *= 0.90;
   }
 };
 
 // Ball gets instantly accelerated to bounceSpeed when it bounces but gravity
 // accelerates it downward a bit at every tick. So the height at time t after a
-// bounce is t times it's velocity At that instant.
-const height = (t) => Math.max(0, t * (bounceSpeed - gravity * t));
+// bounce is t times it's velocity at that instant.
+const height = (t) => Math.max(0, t * (bounceSpeed - gravity * t/2));
 
 // The higher we are, the lighter the shadow.
 const shadowDarkness = (h) => 148 + 1.015 ** h;
